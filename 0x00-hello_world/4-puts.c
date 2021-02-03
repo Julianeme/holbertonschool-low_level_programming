@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-in main(void)
+int main(void)
 {
   puts("\"Programming is like building a multilingual puzzle \n");
 
