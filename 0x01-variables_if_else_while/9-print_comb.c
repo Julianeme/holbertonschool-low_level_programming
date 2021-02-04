@@ -10,9 +10,9 @@ int main(void)
 	for (z = 48; z <= 57; z++)
 	{
 		putchar(z);
-		putchar(32);
 		if (z < 57)
 		putchar(44);
+		putchar(32);
 	}
 putchar(10);
 return (0);
