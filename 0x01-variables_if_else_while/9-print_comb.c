@@ -14,6 +14,6 @@ int main(void)
 		putchar(44);
 		putchar(32);
 	}
-putchar(10);
+putchar(70);
 return (0);
 }
