@@ -14,8 +14,9 @@ for (x = 48; x <= 57; x++)
 	{
 		putchar(x);
 		putchar(z);
-		if (x && z != 9)
-		putchar(' ');
+		if (x && z != 57)
+		putchar(44);
+		putchar(32);
 	}
 	}
 putchar(10);
