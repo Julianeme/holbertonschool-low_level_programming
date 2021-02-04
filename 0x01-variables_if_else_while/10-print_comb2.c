@@ -12,7 +12,6 @@ for (x = 48; x <= 57; x++)
 	{
 	for (z = 48; z <= 57; z++)
 	{
-		putchar(',');
 		putchar(x);
 		putchar(z);
 		if (x && z != 9)
