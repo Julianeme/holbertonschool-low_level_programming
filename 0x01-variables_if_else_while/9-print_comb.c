@@ -12,11 +12,12 @@ int main(void)
 		putchar(z);
 		if (z < 57)
 		{
-		putchar(44);
-		putchar(32);
+			putchar(44);
+			putchar(32);
 		}
 		else
-		{putchar(36);
+		{
+			putchar(36);
 		}
 	}
 putchar(10);
