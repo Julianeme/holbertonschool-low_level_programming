@@ -17,8 +17,15 @@ for (x = 48; x < 57; x++)
 	{
 		putchar(x);
 		putchar(z);
-		putchar (44);
-		putchar(32);
+		if (x == 56 && z == 57)
+		{
+			putchar (10);
+		}
+		else
+		{
+			putchar (44);
+			putchar(32);
+		}
 	}
 	uinit++;
 }
