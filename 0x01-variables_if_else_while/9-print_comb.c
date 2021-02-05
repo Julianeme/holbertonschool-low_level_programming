@@ -11,9 +11,14 @@ int main(void)
 	{
 		putchar(z);
 		if (z < 57)
+		{
 		putchar(44);
 		putchar(32);
+		}
+		else
+		{putchar(36);
+		}
 	}
-putchar(70);
+putchar(10);
 return (0);
 }
