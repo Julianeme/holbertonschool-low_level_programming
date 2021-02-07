@@ -23,26 +23,19 @@ for (m = 48; m <= 57; m++)
 				putchar (32);
 				putchar (d);
 				putchar (u);
+				if (u == 57 && d < 57)
+				{
+					d = d + 1;
+					u = 47;
+				}
 				if (u == 57 && d == 57 && c == 56 && m == 57)
 				{
 					putchar (10);
 				}
-				else if (u == 57 && d < 57)
-				{
-					putchar (44);
-					putchar(32);
-					putchar (m);
-					putchar (c);
-					putchar (32);
-					putchar (d + 1);
-					putchar (48);
-					putchar (44);
-					putchar(32);
-				}
 				else
 				{
 					putchar (44);
-					putchar(32);
+					putchar (32);
 				}
 			}
 		}
