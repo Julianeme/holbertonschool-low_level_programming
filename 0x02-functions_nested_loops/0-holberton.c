@@ -1,10 +1,17 @@
-#include <stdio.h>
+#include "holberton.h"
 /**
  * main - prints HOLBERTON
  * Return: 0
  */
 int main(void)
 {
-	printf("Holberton\n");
+	_putchar('H');
+	_putchar('o');
+	_putchar('l');
+	_putchar('b');
+	_putchar('e');
+	_putchar('t');
+	_putchar('o');
+	_putchar('n');
 	return (0);
 }
