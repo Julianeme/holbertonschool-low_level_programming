@@ -26,10 +26,10 @@ void times_table(void)
 				}
 			_putchar(dec);
 			_putchar(uni);
-			if (d != 9 || u != 9)
+			if (u != 9)
 			{
-			_putchar(44);
-			_putchar(32);
+				_putchar(44);
+				_putchar(32);
 			}
 		}
 		_putchar(10);
