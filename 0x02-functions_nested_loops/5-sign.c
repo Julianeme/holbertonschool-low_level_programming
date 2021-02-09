@@ -1,7 +1,12 @@
 #include "holberton.h"
 
 /**
- * Returns the sign of a number
+ *print_sign - descripción: prints the sign of a number.
+ *
+ *short description: Takes a  number and verifies its sign
+ *
+ *@n: descripcion - Stores the number to be verified.
+ * Return: the sign of a number
  *
  */
 
@@ -10,7 +15,7 @@ int print_sign(int n)
 	if (n > '1')
 	{
 		return (1);
-		_putchar('+')
+		_putchar('+');
 	}
 	else if (n == '0')
 	{
