@@ -1,14 +1,16 @@
 #include "holberton.h"
 
 /**
- * 6-abs.c returns the absolute value of a numer
+ * _abs - description:  returns the absolute value
+ *of a number
  *
+ *@x: takes the value to be evaluated
+ *
+ *Return: Absolute value of x
  */
 
-int _abs(int)
+int _abs(int x)
 {
-	int x;
-
 	if (x < 0)
 		x = x * (-1);
 	else
