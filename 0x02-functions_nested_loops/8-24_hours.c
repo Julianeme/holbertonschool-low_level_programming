@@ -12,24 +12,24 @@ void jack_bauer(void)
 	int md;
 	int mu;
 
-	for (hd = '0'; hd <= '2'; hd++)
+	for (hd = 0; hd <= 2; hd++)
 	{
-		for (hu = '0'; hu <= 9; hu++)
+		for (hu = 0; hu <= 9; hu++)
 		{
-			for (md = '0'; md <= '5'; md++)
+			for (md = 0; md <= 5; md++)
 			{
-				for (mu = '0'; mu <= '9'; mu++)
+				for (mu = 0; mu <= 9; mu++)
 				{
-					_putchar(hd);
-					_putchar(hu);
+					_putchar(hd + 48);
+					_putchar(hu + 48);
 					_putchar(58);
-					_putchar(md);
-					_putchar(mu);
+					_putchar(md + 48);
+					_putchar(mu + 48);
 					_putchar(10);
 
-					if (hd == '2' && hu == '3' && md == '5' && mu == '9')
+					if (hd == 2 && hu == 3 && md == 5 && mu == 9)
 					{
-						hu = 58;
+						hu = 10;
 						hd++;
 					}
 				}
