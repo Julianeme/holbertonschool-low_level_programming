@@ -1,23 +1,34 @@
 #include "holberton.h"
+
 /**
- *_islower - descripción: Check if a letter is lower case.
+ *times_table - descripción: Prints nen times tables.
  *
- *short description: Takes a  letter and verifies if it is in lower case
+ *short description: Prints nine times tables
  *
- *@c: descripcion - Stores the letter to be verified.
- *
- *Return: 1 if the letter is lower case or 0 in any other case.
+ *c, d, dec, unit: descripcion - are ints used as counters.
  */
 
-int _islower(int c)
+void times_table(void)
 
 {
-	if (c >= 97 && c <= 122)
+	int d, u, dec, uni;
+
+	for (d = 0; d <= 9; d++)
 	{
-		return (1);
+		for (u = 0; u <= 9; u++)
+		{
+			dec = ((u * d) / 10) + 48;
+			uni = ((u * d) % 10) + 48;
+
+				if (dec == 48)
+				{
+					dec = 32;
+				}
+			_putchar(dec);
+			_putchar(uni);
+			_putchar(44);
+			_putchar(32);
+		}
+		_putchar(10);
 	}
-	else
-	{
-		return (0);
-			}
 }
