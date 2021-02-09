@@ -20,17 +20,26 @@ void times_table(void)
 			dec = ((u * d) / 10) + 48;
 			uni = ((u * d) % 10) + 48;
 
-				if (dec == 48)
+				if (u == 0)
+				{
+					_putchar(uni);
+				}
+				else if (dec == 48)
 				{
 					dec = 32;
+					_putchar(dec);
+					_putchar(uni);
 				}
-			_putchar(dec);
-			_putchar(uni);
-			if (u != 9)
-			{
-				_putchar(44);
-				_putchar(32);
-			}
+				else
+				{
+					_putchar(dec);
+					_putchar(uni);
+				}
+				if (u != 9)
+				{
+					_putchar(44);
+					_putchar(32);
+				}
 		}
 		_putchar(10);
 	}
