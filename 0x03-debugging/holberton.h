@@ -12,3 +12,4 @@ void print_to_98(int n);
 int _putchar(char c);
 int main(void);
 int largest_number(int a, int b, int c);
+void positive_or_negative(int i);
