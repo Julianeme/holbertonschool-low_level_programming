@@ -14,15 +14,15 @@ int main(void)
 	{
 		if (x % 3 == 0)
 		{
-			printf(" fizz");
+			printf("fizz ");
 		}
 			else if (x % 5 == 0)
 			{
-				printf(" buzz");
+				printf("buzz ");
 			}
 			else
 			{
-				printf(" %d", x);
+				printf("%d ", x);
 			}
 	}
 	putchar(10);
