@@ -6,7 +6,7 @@
  *@n: int, the size of the square
  */
 
-void print_diagonal(int n)
+void print_square(int size)
 {
 	int x;
 
