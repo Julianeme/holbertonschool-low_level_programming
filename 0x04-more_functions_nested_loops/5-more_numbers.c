@@ -18,18 +18,16 @@ void more_numbers(void)
 			if (y <= 57)
 			{
 			_putchar(y);
-			_putchar(44);
 			}
 			if (y == 57)
 			{
-				for (z = 48; z <= 4; z++)
+				for (z = 48; z <= 52; z++)
 				{
-					_putchar(49);
+				_putchar(49);
 				_putchar(z);
-				_putchar(44);
 				}
-			}
 
+			}
 		}
 		_putchar(10);
 	}
