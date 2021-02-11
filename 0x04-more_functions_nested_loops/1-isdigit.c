@@ -1,7 +1,7 @@
 #include "holberton.h"
 
 /**
- * _idigit - function that checks for numbers
+ * _isdigit - function that checks for numbers
  *
  *@c: int tha stores the value to be checked
  *
