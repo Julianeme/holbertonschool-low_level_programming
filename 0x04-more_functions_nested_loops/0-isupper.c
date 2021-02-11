@@ -1,13 +1,16 @@
 #include "holberton.h"
 
 /**
- * print_alphabet - function that prints the alphabet in lower case.
+ * _isupper - function that checks for upper case
  *
+ *@c: int tha stores the letter value
+ *
+ *Return: 0 or 1
  */
 
-void int _isupper(int c)
+int _isupper(int c)
 {
-	if (c >= 65 && c <= 9)
+	if (c >= 65 && c <= 90)
 	{
 		return (1);
 	}
