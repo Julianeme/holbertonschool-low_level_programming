@@ -8,9 +8,15 @@
 
 void print_line(int n)
 {
-	while (--n)
+	while (n != 0)
 	{
-		_putchar(95);
+		if(n < 0)
+			break;
+		else
+		{
+			_putchar(95);
+			n--;
+		}
 	}
 	_putchar(10);
 }
