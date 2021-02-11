@@ -22,7 +22,7 @@ int main(void)
 			}
 			else
 			{
-				printf("%d ");
+				printf(" %d", x);
 			}
 	}
 	putchar(10);
