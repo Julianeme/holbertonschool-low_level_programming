@@ -3,18 +3,19 @@
 /**
  * print_square - prints a square
  *
- *@n: int, the size of the square
+ *@size: int, the size of the square
  */
 
 void print_square(int size)
 {
 	int x;
+	int y;
 
-	if (n > 0)
+	if (size > 0)
 	{
-		for (x = n; x < 0; x++)
+		for (x = 0; x < size; x++)
 		{
-			for (y = 0; y < n; y++)
+			for (y = 0; y < size; y++)
 			{
 				_putchar(35);
 			}
