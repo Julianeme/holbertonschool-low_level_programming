@@ -32,6 +32,6 @@ void print_triangle(int size)
 	}
 	else
 	{
-		putchar (10);
+		_putchar (10);
 	}
 }
