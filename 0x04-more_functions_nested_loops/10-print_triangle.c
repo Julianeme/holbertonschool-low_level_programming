@@ -30,7 +30,7 @@ void print_triangle(int size)
 
 		}
 	}
-	else 
+	else
 	{
 		putchar (10);
 	}
