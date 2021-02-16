@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include "holberton.h"
 
 /**
@@ -10,8 +11,8 @@
 void print_array(int *a, int n)
 {
 	int x;
-
-	if (n != 0)
+ 
+	if (n != 0 && n
 	{
 		for (x = 0; x < n; x++)
 		{
