@@ -1,24 +1,6 @@
 #include "holberton.h"
 
 /**
- * _strlen - Prints lenght of string
- *
- *@s: string to be measured
- *Return: a
- */
-
-int _strlen(char *s)
-{
-	int a = 0;
-
-	while (s[a] != '\0')
-	{
-		a++;
-	}
-	return (a);
-}
-
-/**
  * puts2 - Prints every other
  *
  *@str: string to be printed
@@ -27,10 +9,13 @@ int _strlen(char *s)
 void puts2(char *str)
 {
 	int y;
-	int x;
+	int a = 0;
 
-	x = _strlen(str);
-	for (y = 0; y <= x / 2; y++)
+	while (str[a] != '\0')
+	{
+		a++;
+	}
+	for (y = 0; y <= (a - 1) / 2; y++)
 	{
 		_putchar(str[(2 * y)]);
 
