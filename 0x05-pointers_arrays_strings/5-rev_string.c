@@ -1,20 +1,28 @@
 #include "holberton.h"
 
 /**
- * print_rev - Prints a string
+ * rev_string - Prints a string
  *
  *@s: string to be printed
  */
 
-void print_rev(char *s)
+void rev_string(char *s)
 {
 	int x;
 	int i;
+	int y;
+	char a;
+	char b;
 
 	x = _strlen(s);
-	for (i = x; i >= 0; i--)
+	for(y = 0; y < x; y ++)
 	{
-		_putchar(s[i]);
+		for (i = x; i >= y; i--)
+		{
+			a = s[i];
+			b = s[(i--)];
+			s[(i--)] = a;
+			s[i] = b;
+		}
 	}
-	_putchar(10);
 }
