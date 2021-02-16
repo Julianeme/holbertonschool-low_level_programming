@@ -1,26 +1,6 @@
 #include "holberton.h"
 
 /**
- * _strlen - Returns the lengh of a string
- *
- *@s: string to be evaluated
- *Return: the length of the string
- */
-
-int _strlen(char *s)
-{
-	int a = 0;
-
-	while (s[a] != '\0')
-	{
-		a++;
-	}
-	return (a);
-}
-
-#include "holberton.h"
-
-/**
  * _puts - Prints a string
  *
  *@str: string to be printed
@@ -28,12 +8,16 @@ int _strlen(char *s)
 
 void _puts(char *str)
 {
-	int x, i;
+	int x, i, a;
 
-	x = strlen(str);
+	while (str[a] != '\0')
+	{
+		a++;
+	}
+	x = a;
 	for (i = 0; i <= x; i++)
 	{
 		_putchar(str[i]);
 	}
-	_putchar(\n);
+	_putchar(10);
 }
