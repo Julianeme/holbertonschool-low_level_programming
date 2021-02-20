@@ -1,7 +1,7 @@
 #include "holberton.h"
 
 /**
- *print_number - renders a string into rot13 code
+ *print_number - print an int
  *@n: number to be printed
  */
 
@@ -11,15 +11,16 @@ void print_number(int n)
 	int res;
 	int c = 0;
 	int m = n;
+	int cs = 1;
 
 	if (n < 0)
 	{
 		_putchar(45);
-		m = n * (-1);
+		cs = -1;
 	}
 	while (a >= 10)
 	{
-		res = m / a;
+		res = (m / a) * cs;
 		if (res > 0)
 		{
 			c = 1;
@@ -31,5 +32,6 @@ void print_number(int n)
 		m = m % a;
 		a = a / 10;
 	}
+	m = m * cs;
 	_putchar((m % 10) + 48);
 }
