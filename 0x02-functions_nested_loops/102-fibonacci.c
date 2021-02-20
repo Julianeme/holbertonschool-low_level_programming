@@ -5,7 +5,7 @@
  *Return: always 0
  */
 
-void main(void)
+int main(void)
 
 {
 	unsigned int a = 0;
@@ -25,4 +25,5 @@ void main(void)
 			}
 	}
 	printf("\n");
+	return (0);
 }
