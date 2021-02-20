@@ -19,7 +19,7 @@ int main(void)
 		a = b;
 		b = fib;
 		printf("%u", fib);
-			if (x < 50)
+			if (x < 49)
 			{
 				printf(", ");
 			}
