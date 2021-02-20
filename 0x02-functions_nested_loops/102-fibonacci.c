@@ -13,7 +13,7 @@ void main(void)
 	int x;
 	unsigned int fib;
 
-	for (x = 0; x <= 50; x++)
+	for (x = 0; x < 50; x++)
 	{
 		fib = a + b;
 		a = b;
