@@ -15,21 +15,14 @@ int main(void)
 
 	for (x = 0; x < 50; x++)
 	{
-		if (x == 0)
-		{
-			printf("%ld", b);
-		}
-		else
-		{
-		printf("%ld", fib);
-		}
-		if (x < 49)
-		{
-			printf(", \n");
-		}
 		fib = a + b;
 		a = b;
 		b = fib;
+		printf("%ld", fib);
+		if (x < 49)
+		{
+			printf(",");
+		}
 	}
 	printf("\n");
 	return (0);
