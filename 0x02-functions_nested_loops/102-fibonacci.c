@@ -25,7 +25,7 @@ int main(void)
 		}
 		if (x < 49)
 		{
-			printf(", ");
+			printf(", \n");
 		}
 		fib = a + b;
 		a = b;
