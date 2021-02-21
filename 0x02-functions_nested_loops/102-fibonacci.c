@@ -8,20 +8,20 @@
 int main(void)
 
 {
-	unsigned int a = 0;
-	unsigned int b = 1;
+	long a = 0;
+	long b = 1;
 	int x;
-	unsigned int fib;
+	long fib;
 
 	for (x = 0; x < 50; x++)
 	{
 		if (x == 0)
 		{
-			printf("%u", b);
+			printf("%ld", b);
 		}
 		else
 		{
-		printf("%u", fib);
+		printf("%ld", fib);
 		}
 		if (x < 49)
 		{
