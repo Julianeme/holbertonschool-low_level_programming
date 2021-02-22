@@ -13,7 +13,7 @@ unsigned int _strspn(char *s, char *accept)
 	int bytecount = 0;
 	int n = 0;
 	int unique = 1;
-	int k;
+	int k = 1;
 
 	while (accept[n] != '\0')
 	{
@@ -21,11 +21,12 @@ unsigned int _strspn(char *s, char *accept)
 	}
 	for (i = 0; (i <= n && s[i] != '\0'); i++)
 	{
-		for (k = 0; accept[k] != '\0'; k++)
+		for (k = k + i; accept[k] != '\0'; k++)
 		{
-			if (accept[i] != accept[k])
+			if (accept[i] == accept[k])
 			{
 				unique = 0;
+				break;
 			}
 		}
 		if (unique == 1)
