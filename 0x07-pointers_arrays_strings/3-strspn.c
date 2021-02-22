@@ -21,9 +21,9 @@ unsigned int _strspn(char *s, char *accept)
 	}
 	for (i = 0; (i <= n && s[i] != '\0'); i++)
 	{
-		for (k = k + i; accept[k + i] != '\0'; k++)
+		for (k = i + 1; accept[k + i] != '\0'; k++)
 		{
-			if (accept[i] == accept[k + i])
+			if (accept[i] == accept[(k)])
 			{
 				unique = 0;
 				break;
