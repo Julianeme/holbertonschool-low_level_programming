@@ -9,11 +9,11 @@
 
 unsigned int _strspn(char *s, char *accept)
 {
-	int i, j;
-	int bytecount = 0;
-	int n = 0;
+	unsigned int i, j;
+	unsigned int bytecount = 0;
+	unsigned int n = 0;
 	int unique = 1;
-	int k = 1;
+	unsigned int k = 1;
 
 	while (accept[n] != '\0')
 	{
