@@ -23,7 +23,7 @@ unsigned int _strspn(char *s, char *accept)
 	{
 		for (k = k + i; accept[k + i] != '\0'; k++)
 		{
-			if (accept[i] == accept[k])
+			if (accept[i] == accept[k + i])
 			{
 				unique = 0;
 				break;
