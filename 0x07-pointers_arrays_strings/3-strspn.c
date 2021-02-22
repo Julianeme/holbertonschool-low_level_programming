@@ -11,8 +11,13 @@ unsigned int _strspn(char *s, char *accept)
 {
 	int i, j;
 	int bytecount = 0;
+	int n = 0;
 
-		for (i = 0; s[i] != '\0'; i++)
+	while (accept[n] != '\0')
+	{
+		n++;
+	}
+		for (i = 0; i <= n; i++)
 		{
 			for (j = 0; accept[j] != '\0'; j++)
 			{
