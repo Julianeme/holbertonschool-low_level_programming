@@ -46,9 +46,5 @@ int _sqrt_recursion(int n)
 	{
 		return (0);
 	}
-	else
-	{
-		res1 = auxiliar(res1, n);
-	}
-	return (res1);
+return (res1 = auxiliar(res1, n));
 }
