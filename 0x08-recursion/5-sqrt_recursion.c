@@ -15,6 +15,10 @@ if ((res * res) != m && res > 0)
 {
 	resultado = 1 + auxiliar(res - 1, m);
 }
+else
+{
+	return (0);
+}
 return (resultado);
 }
 
@@ -41,7 +45,10 @@ int _sqrt_recursion(int n)
 	else /*isolates n to be able to comparer*/
 	{
 		res1 = n - auxiliar(res1, n);
+		if (res1 == 0)
+		{
+			return (-1);
+		}
 	}
-
 	return (res1);
 }
