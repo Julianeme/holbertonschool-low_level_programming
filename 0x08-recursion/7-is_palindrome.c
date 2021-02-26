@@ -33,12 +33,12 @@ int _compare_recursion(char *s, int ini, int end)
 	{
 		return (0);
 	}
-	else if ((*(s + ini) == *(s + end)) && *(s + ini) != '\0')
+	else if ((*(s + ini) == *(s + end)) && end > 0)
 	{
 		_compare_recursion(s, ini++, end--);
 		return (1);
 	}
-	return (0);
+	return (1);
 }
 
 /**
