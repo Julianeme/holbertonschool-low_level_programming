@@ -1,43 +1,41 @@
 #include "holberton.h"
-int _strlen_recursion(char *s);
-int _puts_recursion(char *s, int ini, int end);
+int _strlength_recursion(char *s);
+int _compare_recursion(char *s, int ini, int end);
 
 /**
- *_strlen_recursion - returns the length of a string
+ *_strlength_recursion - returns the length of a string
  *@s: input string
  *Return: the lenght of the string
  */
 
-int _strlen_recursion(char *s)
+int _strlength_recursion(char *s)
 {
 	int a = 0;
 
 	if (*(s + a) != '\0')
 	{
-		a = 1 + _strlen_recursion(s + 1);
+		a = 1 + _strlength_recursion(s + 1);
 	}
 	return (a);
 }
 
-#include "holberton.h"
-
 /**
- *_puts_recursion - checks 0,1 etc against last, last -1 of a string
- *@d: string to be printed
+ *_compare_recursion - checks 0,1 etc against last, last -1 of a string
+ *@s : string to be printed
  *@ini: starting point of the string
  *@end: lenght or last point of the string
  *Return: 1 if palindrome, 0 if not
  */
 
-int _puts_recursion(char *d, int ini, int end)
+int _compare_recursion(char *s, int ini, int end)
 {
-	if (*(d + ini) != *(d + end))
+	if (*(s + ini) != *(s + end))
 	{
 		return (0);
 	}
-	else if ((*(d + ini) == *(d + end)) && *(d + ini) != '\0')
+	else if ((*(s + ini) == *(s + end)) && *(s + ini) != '\0')
 	{
-		_puts_recursion(*d, ini++, end--);
+		_compare_recursion(s, ini++, end--);
 		return (1);
 	}
 	return (0);
@@ -54,15 +52,15 @@ int is_palindrome(char *s)
 	int length;
 	int answer;
 
-	length = _strlen_recursion(char *d);
+	length = _strlength_recursion(s);
 
-	if (length == o)
+	if (length == 0)
 	{
 		return (0);
 	}
 	else
 	{
-		answer = _puts_recursion(char *d, length);
+		answer = _compare_recursion(s, 0, length);
 		return (answer);
 	}
 	return (0);
