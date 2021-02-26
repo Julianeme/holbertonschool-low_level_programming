@@ -35,7 +35,7 @@ int _compare_recursion(char *s, int ini, int end)
 	}
 	else if ((*(s + ini) == *(s + end)) && end > 0)
 	{
-		_compare_recursion(s, ini++, end--);
+		_compare_recursion(s, ++ini, --end);
 		return (1);
 	}
 	return (1);
@@ -53,6 +53,7 @@ int is_palindrome(char *s)
 	int answer;
 
 	length = _strlength_recursion(s);
+	length--;
 
 	if (length == 0)
 	{
