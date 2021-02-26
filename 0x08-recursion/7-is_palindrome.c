@@ -58,10 +58,6 @@ int is_palindrome(char *s)
 	{
 		return (0);
 	}
-	else
-	{
-		answer = _compare_recursion(s, 0, length);
-		return (answer);
-	}
-	return (0);
+answer = _compare_recursion(s, 0, length);
+return (answer);
 }
