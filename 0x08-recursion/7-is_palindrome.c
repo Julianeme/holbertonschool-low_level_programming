@@ -37,7 +37,7 @@ int _compare_recursion(char *s, int ini, int end)
 	{
 		return (_compare_recursion(s, ++ini, --end));
 	}
-	return (0);
+	return (1);
 }
 
 /**
