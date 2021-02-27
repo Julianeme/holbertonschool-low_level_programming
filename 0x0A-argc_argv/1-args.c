@@ -4,6 +4,7 @@
 /**
  *main - prints the number of arguments in the command line
  *@argc: captures the number of commands in the command line
+ *@argv: unused argument
  *Return: always 0
  */
 
