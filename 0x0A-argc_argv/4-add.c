@@ -1,6 +1,27 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <ctype.h>
+#include "holberton.h"
+int _isdigit(int c);
+
+/**
+ * _isdigit - function that checks for numbers
+ *
+ *@c: int tha stores the value to be checked
+ *
+ *Return: 0 or 1
+ */
+
+int _isdigit(int c)
+{
+	if (c >= 48 && c <= 57)
+	{
+		return (1);
+	}
+	else
+	{
+		return (0);
+	}
+}
 
 /**
  *main - Adds two positive numbers
@@ -25,7 +46,7 @@ int main(int argc, char *argv[])
 		{
 			for (j = 0; argv[i][j] != '\0'; j++)
 			{
-				if (isdigit(argv[i][j]) == 0)
+				if (_isdigit(argv[i][j]) == 0)
 				{
 					printf("Error\n");
 					return (1);
