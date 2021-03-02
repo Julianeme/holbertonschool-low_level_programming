@@ -14,7 +14,7 @@ char *_strdup(char *str)
 	unsigned int a = 0;
 	char *array;
 
-	while (str[a] != '\0')
+	while (str)
 	{
 		a++;
 	}
