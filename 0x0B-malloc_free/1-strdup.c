@@ -14,10 +14,12 @@ char *_strdup(char *str)
 	char *array;
 
 	if (str == 0)
-		return (NULL);
+		return (0);
 	while (str[a] != '\0')
 		a++;
 	array = malloc(a * sizeof(char) + 1);
+	if (array == 0)
+		return (0);
 	for (i = 0; i <= a; i++)
 	{
 		array[i] = str[i];
