@@ -20,22 +20,22 @@ char *argstostr(int ac, char **av)
 	}
 	else
 	{
-		for (i = 1; i < ac; i++)
+		for (i = 1; i <= ac; i++)
 		{
 			for (j = 0; av[i][j] != '\0'; j++)
 			{
 				length = length + 1;
-								}
 			}
 		}
 	array = malloc(length * sizeof(char));
+	}
 	if (array == 0)
 		return (NULL);
 	for (i = 1; i < ac; i++)
 	{
 		for (j = 0; av[i][j] != '\0'; j++)
 		{
-			array[i + j = av[i + j];
+			array[i + j] = *av[i + j];
 		}
 	}
 return (array);
