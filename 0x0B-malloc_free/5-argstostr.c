@@ -14,7 +14,7 @@ char *argstostr(int ac, char **av)
 	char *array;
 	int i, j;
 
-	if (argc < 1)
+	if (ac < 1)
 	{
 		return (NULL);
 	}
