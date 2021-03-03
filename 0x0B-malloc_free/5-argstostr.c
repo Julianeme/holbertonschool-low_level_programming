@@ -38,5 +38,5 @@ char *argstostr(int ac, char **av)
 			array[i + j = av[i + j];
 		}
 	}
-return (0);
+return (array);
 }
