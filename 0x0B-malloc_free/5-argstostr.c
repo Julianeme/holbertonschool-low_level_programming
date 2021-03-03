@@ -29,13 +29,13 @@ char *argstostr(int ac, char **av)
 			}
 		}
 	array = malloc(length * sizeof(char));
-	if array == 0;
-	return (NULL);
+	if (array == 0)
+		return (NULL);
 	for (i = 1; i < ac; i++)
 	{
 		for (j = 0; av[i][j] != '\0'; j++)
 		{
-			length = length + 1;
+			array[i + j = av[i + j];
 		}
 	}
 return (0);
