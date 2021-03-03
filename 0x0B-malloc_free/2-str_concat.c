@@ -15,13 +15,15 @@ char *str_concat(char *s1, char *s2)
 	unsigned int a = 0, b = 0;
 	char *array;
 
-	while (s1[a] != '\0')
+	while (s1 != '\0')
 	{
 		a++;
+		s1++;
 	}
 	while (s2[b] != '\0')
 	{
 		b++;
+		s2++;
 	}
 	length = a + b;
 	array = malloc(length * sizeof(char) + 1);
