@@ -27,13 +27,13 @@ matrix = malloc(height * sizeof(int *));
 			{
 				return (NULL);
 			}
-			else
-			{
-				for (j = 0; j < height; j++)
-				{
-					matrix[i][j] = 0;
-				}
-			}
+	}
+	for (j = 0; j < height; j++)
+	{
+		for (i = 0; i < width; i++)
+		{
+			matrix[j][i] = 0;
+		}
 	}
 	return (matrix);
 }
