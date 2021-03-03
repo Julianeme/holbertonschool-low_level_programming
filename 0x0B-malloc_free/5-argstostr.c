@@ -2,14 +2,16 @@
 #include <stdlib.h>
 
 /**
- *free_grid - returns a pointer to a 2 dimensional array of integers
- *@grid: grid to be freed.
- *@height: height of the matrix
+ *argstostr - concatenates the arguments
+ *@ac: number of arguments.
+ *@av: the argument
+ *Return: a pointer to the concatenated string
  */
 
 char *argstostr(int ac, char **av)
 {
 	int length = 0;
+	char *array;
 	int i, j;
 
 	if (argc < 1)
@@ -18,22 +20,23 @@ char *argstostr(int ac, char **av)
 	}
 	else
 	{
-		for (i = 1; i < argc; i++)
+		for (i = 1; i < ac; i++)
 		{
-			for (j = 0; argv[i][j] != '\0'; j++)
+			for (j = 0; av[i][j] != '\0'; j++)
 			{
 				length = length + 1;
-				{
-					printf("Error\n");
-					return (1);
-				}
+								}
 			}
 		}
-	}
-	for (i = 1; i < argc; i++)
+	array = malloc(length * sizeof(char));
+	if array == 0;
+	return (NULL);
+	for (i = 1; i < ac; i++)
 	{
-		res += atoi(argv[i]);
+		for (j = 0; av[i][j] != '\0'; j++)
+		{
+			length = length + 1;
+		}
 	}
-	printf("%d\n", res);
-	return (0);
+return (0);
 }
