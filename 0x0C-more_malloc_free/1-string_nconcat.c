@@ -44,7 +44,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		array[k] = s1[i];
 		k++;
 	}
-	for (j = (l1 - 1); j < length; j++)
+	for (j = (l1 - 1); j < length - 1; j++)
 	{
 		array[k] = s2[l];
 		k++;
