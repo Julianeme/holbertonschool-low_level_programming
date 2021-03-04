@@ -4,7 +4,7 @@
 /**
  *array_range - creates a array from min to max
  *@min: starting point
- *@max: max 
+ *@max: max
  *Return: a pointer to the tring
  */
 
