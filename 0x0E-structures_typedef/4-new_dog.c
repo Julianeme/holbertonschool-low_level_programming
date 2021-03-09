@@ -21,7 +21,6 @@ dog_t *new_dog(char *name, float age, char *owner)
 	new_dog_reg = malloc(sizeof(struct dog));
 	if (new_dog_reg == NULL)
 	{
-		free(new_dog_reg);
 		return (NULL);
 	}
 	while (name[i])
@@ -31,14 +30,12 @@ dog_t *new_dog(char *name, float age, char *owner)
 	aka = malloc(i * sizeof(char) + 1);
 		if (aka == NULL)
 		{
-			free(aka);
 			free(new_dog_reg);
 			return (NULL);
 		}
 		master = malloc(j * sizeof(char) + 1);
 		if (master == NULL)
 		{
-			free(master);
 			free(aka);
 			free(new_dog_reg);
 			return (NULL);
