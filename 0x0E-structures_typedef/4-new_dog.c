@@ -13,7 +13,7 @@
 dog_t *new_dog(char *name, float age, char *owner)
 {
 	struct dog *new_dog_reg;
-	int i = 0, j = 0;
+	int i = 0, j = 0, k;
 	char *aka, *master;
 
 	if (name == NULL || owner == NULL || age < 0)
@@ -40,8 +40,10 @@ dog_t *new_dog(char *name, float age, char *owner)
 			free(new_dog_reg);
 			return (NULL);
 		}
-	aka = name;
-	master = owner;
+		for (k = 0; k <= i; k++)
+			aka[k] = name[k];
+		for (k = 0; k <= j; k++)
+			master[k] = owner[k];
 	new_dog_reg->name = aka;
 	new_dog_reg->owner = master;
 	new_dog_reg->age = age;
