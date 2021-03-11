@@ -34,9 +34,9 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 	{
 		while (i < n)
 		{
-			printf("%i%c", (va_arg(argumentos, int)), sep);
+			printf("%i", (va_arg(argumentos, int)));
 			if (i != (n - 1))
-				printf(" ");
+				printf("%c ", sep);
 			else
 				printf("\n");
 			i++;
