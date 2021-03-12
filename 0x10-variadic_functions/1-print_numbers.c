@@ -13,19 +13,15 @@
 void print_numbers(const char *separator, const unsigned int n, ...)
 {
 	unsigned int i = 0;
-	char sep;
 	va_list argumentos;
 
 	va_start(argumentos, n);
-	sep = *separator;
 	if (separator == NULL)
 	{
 		while (i < n)
 		{
 			printf("%i", (va_arg(argumentos, int)));
 			if (i != (n - 1))
-				printf(" ");
-			else
 				printf("\n");
 			i++;
 		}
@@ -36,7 +32,7 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 		{
 			printf("%i", (va_arg(argumentos, int)));
 			if (i != (n - 1))
-				printf("%c ", sep);
+				printf("%s", separator);
 			else
 				printf("\n");
 			i++;
