@@ -15,8 +15,6 @@ void print_strings(const char *separator, const unsigned int n, ...)
 	va_list words;
 
 	va_start(words, n);
-	if (n == 0)
-		return;
 	while (i < n)
 	{
 		if (words == NULL)
