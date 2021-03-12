@@ -20,7 +20,7 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 	{
 		while (i < n)
 		{
-			printf("%i", (va_arg(argumentos, int)));
+			printf("%d", va_arg(argumentos, int));
 			if (i != (n - 1))
 				printf("\n");
 			i++;
@@ -30,13 +30,12 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 	{
 		while (i < n)
 		{
-			printf("%i", (va_arg(argumentos, int)));
+			printf("%d", va_arg(argumentos, int));
 			if (i != (n - 1))
 				printf("%s", separator);
-			else
-				printf("\n");
 			i++;
 		}
 	}
+	printf("\n");
 	va_end(argumentos);
 }
