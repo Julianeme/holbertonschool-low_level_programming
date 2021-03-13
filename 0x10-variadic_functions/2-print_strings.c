@@ -17,12 +17,12 @@ void print_strings(const char *separator, const unsigned int n, ...)
 	va_start(words, n);
 	while (i < n)
 	{
-		if (words == NULL)
+		if (words == 00)
 			printf("(nil)");
 		else
 		{
 			printf("%s", va_arg(words, char *));
-			if (i < (n - 1) && separator != NULL)
+			if (i != (n - 1) && separator != NULL)
 				printf("%s", separator);
 		}
 		i++;
