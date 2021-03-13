@@ -1,4 +1,6 @@
-#include "calc.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include "3-calc.h"
 
 /**
  * main - perform the operation selected by user.
@@ -9,31 +11,25 @@
 int main(int argc, char *argv[])
 {
 
-	int i, j, k;
+	int i, j;
 
-	if (argc != 3)
+	if (argc != 4)
 	{
 		printf("Error\n");
 		exit(98);
 	}
 
-	i = atoi(argv[2]);
-	j = atoi(argv[4]);
-	k = argv[3];
+	i = atoi(argv[1]);
+	j = atoi(argv[3]);
 
-	if (argv[3] != '+' && arg[3] != '-' && argv[3] != '*' && arv[3] != '/'
-	    && argv[3] != '%')
-	{
-		printf("Error\n");
-		exit(99);
-	}
-	if (arv[3] == '/' || argv[3] == '%' && j == 0)
+
+	if ((*argv[2] == '/' ||  *argv[2] == '%') && j == 0)
 	{
 		printf("Error\n");
 		exit(100);
 	}
 
-	printf("%i\n", (get_op_fun(get_op_func(k))(i, j))
+	printf("%i\n", get_op_func(argv[2])(i, j));
 
 	return (0);
 }

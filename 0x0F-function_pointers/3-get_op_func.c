@@ -1,4 +1,4 @@
-#include "calc.h"
+#include "3-calc.h"
 
 /**
  *get_op_func - selects the right function
@@ -16,15 +16,16 @@ int (*get_op_func(char *s))(int, int)
 		{"%", op_mod},
 		{NULL, NULL}
 	};
-	int i;
+	int i = 0;
 
-	while (ops[i][0] != NULL)
+	while (ops[i].op[0])
 	{
-		if (s == ops[i][0])
+		if (s[0] == ops[i].op[0] && s[1] == '\0')
 		{
-			return (ops);
-			i++;
+			return (ops[i].f);
 		}
+		i++;
 	}
-	return (NULL);
+	printf("Error");
+	exit(99);
 }
