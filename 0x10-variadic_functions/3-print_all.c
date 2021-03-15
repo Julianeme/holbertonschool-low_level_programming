@@ -26,7 +26,6 @@ void print_s(va_list string)
 	{
 		printf("(nil)");
 	}
-	else
 		printf("%s", va_arg (string, char*));
 }
 
