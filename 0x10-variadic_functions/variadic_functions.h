@@ -3,10 +3,16 @@
 
 #include <stdarg.h>
 
+/**
+ *struct ptr - struct to organize printing functions
+ *@dt: data type
+ *@f: function to be called
+ */
+
 typedef struct prt
 {
-	char *dt;
-void (*f) (va_list);
+char *dt;
+void (*f)(va_list);
 } _print;
 
 int sum_them_all(const unsigned int n, ...);
