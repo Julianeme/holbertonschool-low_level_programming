@@ -3,7 +3,7 @@
 #include "variadic_functions.h"
 
 /**
- * print_num - print numbers
+ * print_i - print numbers
  *@number: number to be printed
  */
 
@@ -15,7 +15,7 @@ void print_i(va_list number)
 }
 
 /**
- * print_str - prints strings
+ * print_s - prints strings
  *@string: string to print
  */
 
@@ -32,7 +32,7 @@ void print_s(va_list string)
 
 /**
  * print_f - prints float numbers
- *@n: number of arguments
+ *@decimal: number to print
  */
 
 
@@ -43,8 +43,8 @@ void print_f(va_list decimal)
 }
 
 /**
- * print_char - prints chars
- *@ch: chart to print
+ * print_c - prints chars
+ *@arguments: chart to print
  */
 
 
