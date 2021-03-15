@@ -5,14 +5,9 @@
 
 typedef struct prt
 {
-	char *prt;
-	void (constant unsigned int n, ...);
+	char *dt;
+void (*f) (va_list);
 } _print;
-
-void prt_num(const unsigned int n, ...)
-void prt_str(const unsigned int n, ...)
-void prt_fl(const unsigned int n, ...)
-void prt_char(const unsigned int n, ...)
 
 int sum_them_all(const unsigned int n, ...);
 void print_numbers(const char *separator, const unsigned int n, ...);
