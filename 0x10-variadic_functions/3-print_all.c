@@ -4,86 +4,93 @@
 
 /**
  * print_num - print numbers
- *@n: number of arguments
+ *@number: number to be printed
  */
 
 
-void print_num(const unsigned int n, ...)
+void print_i(va_list number)
 {
-	unsigned int i = 0;
-	va_list numbers;
 
-	va_start(numbers, n);
-		while (i < n)
-		{
-			printf("%d ", va_arg(numbers, int));
-			i++;
-		}
-	}
-	printf("\n");
-	va_end(numbers);
+	printf("%d", va_arg(number, int));
 }
 
 /**
  * print_str - prints strings
- *@n: number of arguments
+ *@string: string to print
  */
 
 
-void print_str(const unsigned int n, ...)
+void print_s(va_list string)
 {
-	unsigned int i = 0;
-	va_list words;
-
-	va_start(words, n);
-	while (i < n)
+	if (string == NULL)
 	{
-		printf("%s ", va_arg(words, char*);
-		i++;
+		printf("(nil)");
 	}
-printf("\n");
-va_end(words);
+	else
+		printf("%s", va_arg (string, char*));
 }
 
 /**
- * print_fl - prints float numbers
+ * print_f - prints float numbers
  *@n: number of arguments
  */
 
 
-void print_fl(const unsigned int n, ...)
+void print_f(va_list decimal)
 {
-	unsigned int i = 0;
-	va_list flnum;
 
-	va_start(flnum, n);
-	while (i < n)
-	{
-		printf("%.2f ", va_arg(flnum, int));
-		i++;
-	}
-}
-printf("\n");
-va_end(flnum);
+	printf("%f", va_arg(decimal, double));
 }
 
 /**
  * print_char - prints chars
- *@n: number of arguments
+ *@ch: chart to print
  */
 
 
-void print_char(const unsigned int n, ...)
+void print_c(va_list arguments)
 {
-	unsigned int i = 0;
-	va_list ch;
 
-	va_start(ch, n);
-	while (i < n)
+	printf("%c", va_arg(arguments, int));
+
+}
+
+/**
+ * print_all - prints anything
+ *@format: entry format defined by user
+ */
+void print_all(const char * const format, ...)
+{
+	_print print_any[] = {
+		{"c", print_c},
+		{"i", print_i},
+		{"s", print_s},
+		{"f", print_f},
+		{00, 00}
+	};
+	va_list arguments;
+	int x = 0, i = 0;
+
+	va_start(arguments, format);
+
+	while (format && format[x])
 	{
-		printf("%c ", va_arg(ch, char*);
-		i++;
+		i = 0;
+		while (print_any[i].dt)
+		{
+			if (*print_any[i].dt == format[x])
+			{
+				print_any[i].f(arguments);
+				if (format[x + 1] != '\0')
+				{
+					printf(",");
+					printf(" ");
+				}
+			}
+			i++;
+		}
+		x++;
 	}
 	printf("\n");
-	va_end(ch);
+	va_end(arguments);
 }
