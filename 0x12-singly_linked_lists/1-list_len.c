@@ -1,7 +1,7 @@
 #include "lists.h"
 
 /**
- * print_list -  prints all the elements of a list_t list
+ * list_len -  returns the number of nodes in a liked list
  * @h: a pointer to the element of the list
  * Return: the number of nodes
  */
