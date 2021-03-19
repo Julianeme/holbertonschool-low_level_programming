@@ -19,7 +19,6 @@ size_t print_list(const list_t *h)
 		{
 			printf("[0] (nill)\n");
 			h = h->next;
-			nod_count++;
 		}
 		else
 		{
