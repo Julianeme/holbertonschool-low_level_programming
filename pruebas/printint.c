@@ -1,6 +1,7 @@
 #include <stdio.h>
 
 //function to print int numbers
+//@n: int number to be printed
 
 void print(int n);
 
