@@ -9,8 +9,12 @@
 
 int set_bit(unsigned long int *n, unsigned int index)
 {
+	unsigned long int num = 0, *p;
+
+	num = (1 << index);
+	p = &num;
 	if (index > 31)
-	return (-1);
-	n[index] = n[index] | 1;
+		return (-1);
+	*n = *n | *p;
 	return (1);
 }
