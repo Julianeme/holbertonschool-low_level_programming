@@ -26,20 +26,20 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		return (0);
 	}
 	fd = open(filename, O_RDONLY);
-	if (!fd)
+	if (fd == -1)
 	{
 		free(rbuffer);
 		return (0);
 	}
 	lr = read(fd, rbuffer, letters);
-	if (!lr)
+	if (lr == -1)
 	{
 		close(fd);
 		free(rbuffer);
 		return (0);
 	}
-	lw = write(STDOUT_FILENO, rbuffer, letters);
-	if (!lw)
+	lw = write(STDOUT_FILENO, rbuffer, lr);
+	if (lw == -1)
 	{
 		close(fd);
 		free(rbuffer);
