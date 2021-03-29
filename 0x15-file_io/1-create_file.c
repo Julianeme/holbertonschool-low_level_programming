@@ -29,7 +29,7 @@ int create_file(const char *filename, char *text_content)
 	{
 		i++;
 	}
-	lw = write(*filename, text_content, i);
+	lw = write(fd, text_content, i);
 	if (lw == -1)
 	{
 		close(fd);
