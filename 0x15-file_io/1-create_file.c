@@ -4,10 +4,9 @@
 #include <unistd.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
 
 /**
- * create_file - creates a file.
+ * create_file - creates a file
  * @filename: pointer to the file to be readed
  * @text_content: pointer to the content to be written on the new file
  * Return: 1 on success, -1 otherwise
@@ -24,6 +23,7 @@ int create_file(const char *filename, char *text_content)
 	if (fd < 0)
 	{
 		return (-1);
+		close(fd);
 	}
 	while (text_content[i])
 	{
@@ -35,5 +35,6 @@ int create_file(const char *filename, char *text_content)
 		close(fd);
 		return (-1);
 	}
+	close(fd);
 	return (1);
 }
