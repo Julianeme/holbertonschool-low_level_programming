@@ -28,7 +28,7 @@ int main(int argc, char *argv[])
 		exit(99);
 	}
 	rd = read(fd1, wbuffer, 1024);
-	while ((rd = read(fd1, wbuffer, 1024) >= 0)
+	while ((rd = read(fd1, wbuffer, 1024)) >= 0)
 	{
 		wr = write(fd2, wbuffer, rd);
 		if (wr == -1)
@@ -37,9 +37,9 @@ int main(int argc, char *argv[])
 			exit(99);
 		}
 	}
-	if ((close(fd1) == -1))
+	if (close(fd1) == -1)
 		error100(fd1);
-	if ((close(fd2) == -1))
+	if (close(fd2) == -1)
 		error100(fd2);
 	return (0);
 }
