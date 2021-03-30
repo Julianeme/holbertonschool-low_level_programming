@@ -35,9 +35,9 @@ int main(int argc, char *argv[])
 		exit(99);
 	}
 	if ((close(fd1) == -1))
-		error100(int fd1);
+		error100(fd1);
 	if ((close(fd2) == -1))
-		error100(int fd2);
+		error100(fd2);
 	return (0);
 }
 
