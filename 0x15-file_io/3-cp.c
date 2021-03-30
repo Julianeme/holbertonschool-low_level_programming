@@ -47,7 +47,7 @@ int main(int argc, char *argv[])
  * Return: 0 if successfull
  */
 
-void error100(int fd)
+int error100(int fd)
 {
 	dprintf(STDERR_FILENO, "Error: Can't close fd %i", fd);
 	exit(100);
