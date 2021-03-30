@@ -16,8 +16,7 @@ int main(int argc, char *argv[])
 		exit(97);
 	}
 	fd1 = open(argv[1], O_RDONLY);
-	rd = read(fd1, wbuffer, 1024);
-	if ((fd1 == -1) | (rd == -1))
+	if (fd1 == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 		exit(98);
@@ -28,11 +27,15 @@ int main(int argc, char *argv[])
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[2]);
 		exit(99);
 	}
-	wr = write(fd2, wbuffer, rd);
-	if (wr == -1)
+	rd = read(fd1, wbuffer, 1024);
+	while ((rd = read(fd1, wbuffer, 1024) >= 0)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
-		exit(99);
+		wr = write(fd2, wbuffer, rd);
+		if (wr == -1)
+		{
+			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
+			exit(99);
+		}
 	}
 	if ((close(fd1) == -1))
 		error100(fd1);
@@ -40,12 +43,12 @@ int main(int argc, char *argv[])
 		error100(fd2);
 	return (0);
 }
-
 /**
  * error100 - prints the error message when an fd cant be closed
  * @fd: file descriptor
  * Return: 0 if successfull
  */
+int error100(int fd);
 
 int error100(int fd)
 {
