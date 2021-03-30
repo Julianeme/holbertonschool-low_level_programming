@@ -11,7 +11,6 @@
  * @argv: arguments
  * Return: 0 if successfull
  */
-
 int main(int argc, char *argv[])
 {
 	int fd1, fd2, rd, wr;
@@ -35,17 +34,20 @@ int main(int argc, char *argv[])
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[2]);
 		exit(99);
 	}
-
 	wr = write(fd2, wbuffer, rd);
 	if (wr == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
 		exit(99);
 	}
-close(fd2);
 if ((close(fd1) == -1))
 {
 	dprintf(STDERR_FILENO, "Error: Can't close fd %s", argv[1]);
+	exit(100);
+}
+if ((close(fd2) == -1))
+{
+	dprintf(STDERR_FILENO, "Error: Can't close fd %s", argv[2]);
 	exit(100);
 }
 return (0);
