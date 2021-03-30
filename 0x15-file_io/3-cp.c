@@ -1,10 +1,4 @@
-#include <sys/types.h>
-#include <sys/stat.h>
-#include <fcntl.h>
-#include <unistd.h>
-#include <stdio.h>
-#include <stdlib.h>
-
+#include "holberton.h"
 /**
  * main - copies a file
  * @argc: number of arguments passed to the program
@@ -23,7 +17,7 @@ int main(int argc, char *argv[])
 	}
 	fd1 = open(argv[1], O_RDONLY);
 	rd = read(fd1, wbuffer, 1024);
-	if ((rd == -1) | (fd1 == -1))
+	if ((fd1 == -1) | (rd == -1))
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 		exit(98);
@@ -40,15 +34,16 @@ int main(int argc, char *argv[])
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
 		exit(99);
 	}
-if ((close(fd1) == -1))
-{
-	dprintf(STDERR_FILENO, "Error: Can't close fd %s", argv[1]);
-	exit(100);
-}
-if ((close(fd2) == -1))
-{
-	dprintf(STDERR_FILENO, "Error: Can't close fd %s", argv[2]);
-	exit(100);
-}
-return (0);
+	if ((close(fd1) == -1))
+	{
+		dprintf(STDERR_FILENO, "Error: Can't close fd %s", argv[1]);
+		exit(100);
+	}
+	if ((close(fd2) == -1))
+	{
+		dprintf(STDERR_FILENO, "Error: Can't close fd %s", argv[2]);
+		exit(100);
+	}
+	free(wbuffer);
+	return (0);
 }
