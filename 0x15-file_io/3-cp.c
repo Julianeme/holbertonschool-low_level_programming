@@ -17,7 +17,12 @@ int main(int argc, char *argv[])
 	}
 	fd1 = open(argv[1], O_RDONLY);
 	rd = read(fd1, wbuffer, BUFSIZ);
-	if ((fd1 == -1) | (rd == -1))
+	if (rd == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
+		exit(98);
+	}
+	if (fd1 == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 		exit(98);
