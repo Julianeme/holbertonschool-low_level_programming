@@ -16,7 +16,7 @@ int main(int argc, char *argv[])
 		exit(97);
 	}
 	fd1 = open(argv[1], O_RDONLY);
-	fd2 = open(argv[2], O_RDWR | O_CREAT | O_TRUNC, 0664);
+	fd2 = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, 0664);
 	rd = read(fd1, wbuffer, BUFSIZ);
 	wr = write(fd2, wbuffer, rd);
 	if ((fd1 == -1) | (wr == -1))
