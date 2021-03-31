@@ -5,7 +5,7 @@
  * @argv: arguments
  * Return: 0 if successfull
  */
-int main(int argc, char *argv[])
+int main(int argc, char **argv)
 {
 	int fd1 = 0, fd2 = 0, rd = 0, wr = 0;
 	char wbuffer[BUFSIZ];
