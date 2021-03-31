@@ -40,20 +40,20 @@ int main(int argc, char *argv[])
 		exit(99);
 	}
 	if (close(fd1) == -1)
-		error100(fd1);
+		error100(argv[1]);
 	if (close(fd2) == -1)
-		error100(fd2);
+		error100(argv[2]);
 	return (0);
 }
 /**
  * error100 - prints the error message when an fd cant be closed
- * @fd: file descriptor
+ * @file: name of the file which failed to close
  * Return: 0 if successfull
  */
-int error100(int fd);
+void error100(char *file);
 
-int error100(int fd)
+void error100(char *file)
 {
-	dprintf(STDERR_FILENO, "Error: Can't close fd %i", fd);
+	dprintf(STDERR_FILENO, "Error: Can't close fd %s", file);
 	exit(100);
 }
