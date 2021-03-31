@@ -8,7 +8,7 @@
 int main(int argc, char *argv[])
 {
 	int fd1, fd2, rd, wr;
-	char wbuffer[1024];
+	char wbuffer[BUFSIZ];
 
 	if (argc != 3)
 	{
@@ -17,7 +17,7 @@ int main(int argc, char *argv[])
 	}
 	fd1 = open(argv[1], O_RDONLY);
 	fd2 = open(argv[2], O_RDWR | O_CREAT | O_TRUNC, 0664);
-	rd = read(fd1, wbuffer, 1024);
+	rd = read(fd1, wbuffer, BUFSIZ);
 	wr = write(fd2, wbuffer, rd);
 	if ((fd1 == -1) | (wr == -1))
 	{
