@@ -7,7 +7,7 @@
  */
 int main(int argc, char *argv[])
 {
-	int fd1, fd2, rd, wr;
+	int fd1 = 0, fd2 = 0, rd = 0, wr = 0;
 	char wbuffer[BUFSIZ];
 
 	if (argc != 3)
@@ -21,7 +21,7 @@ int main(int argc, char *argv[])
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 		exit(98);
 	}
-	fd2 = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
+	fd2 = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, 0664);
 	if (fd2 == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[2]);
@@ -54,6 +54,6 @@ void error100(char *file);
 
 void error100(char *file)
 {
-	dprintf(STDERR_FILENO, "Error: Can't close fd %s", file);
+	dprintf(STDERR_FILENO, "Error: Can't close fd %s\n", file);
 	exit(100);
 }
