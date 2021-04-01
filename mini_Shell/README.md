@@ -1,0 +1,1 @@
+Basic aspects and functioning of a simple shell
