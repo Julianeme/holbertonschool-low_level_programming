@@ -50,7 +50,6 @@ int main(int argc, char **argv)
  * @file: name of the file which failed to close
  * Return: 0 if successfull
  */
-void error100(char *file);
 
 void error100(char *file)
 {
