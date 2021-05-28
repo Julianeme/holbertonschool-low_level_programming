@@ -12,8 +12,8 @@ void hash_table_print(const hash_table_t *ht)
 	int c = 0;
 	hash_node_t *temp = NULL;
 
-	if (!ht || !key || !ht->array)
-		return (0);
+	if (!ht || !ht->array)
+		return;
 
 	printf("{");
 	if (!ht)
