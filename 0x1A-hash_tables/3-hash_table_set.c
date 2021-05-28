@@ -22,7 +22,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	copy_key = strdup(key);
 	if (!copy_key)
 	{
-		free (new);
+		free(new);
 		return (0);
 	}
 	new->key = copy_key;
