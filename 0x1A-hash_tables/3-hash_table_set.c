@@ -20,6 +20,8 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	if (!new)
 		return (0);
 	copy_key = strdup(key);
+	if (!copy_key)
+		return (0);
 	new->key = copy_key;
 	new->value = strdup(value);
 	index = hash_djb2((const unsigned char *) key) % ht->size;
