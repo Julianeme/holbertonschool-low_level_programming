@@ -103,32 +103,6 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 		printf("SHEAD es: %s ------\n", new->key);
 		return (1);
 	}
-	/*temp = ht->shead;
-	while (temp->next)
-	{
-		printf("SHEAD es: %s ------\n", temp->key);
-		if(new->key > temp->key && (new->key < temp->snext->key || !temp->snext))
-		{
-			printf("entro a la comparacion-----\n");
-			new->snext = temp->snext;
-			if(temp->snext)
-				temp->snext->sprev = new;
-			new->sprev = temp;
-			new->snext = temp->snext;
-			temp->snext = new;
-			if (!new->snext)
-				ht->stail = new;
-			if (!temp->sprev)
-				ht->shead = new;
-			printf("TAIL ES es: %s ------\n", ht->stail->key);
-			printf("HEAD ES es: %s ------\n", ht->shead->key);
-			return(1);
-		}
-		else
-			temp = temp->snext;
-	}*/
-	//printf("TAIL ES es: %s ------\n", ht->stail->key);
-	//printf("TAIL ES es: %s ------\n", ht->stail->key);
 	return (1);
 }
 
