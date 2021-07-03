@@ -1,6 +1,6 @@
 CC = gcc
 SRC = main.c holberton.c
-OBJ = *.o
+OBJ = "*.o"
 NAME = holberton
 
 all: $(OBJ) m.h
