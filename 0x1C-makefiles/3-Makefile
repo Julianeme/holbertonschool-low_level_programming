@@ -16,7 +16,8 @@ oclean:
 		$(RM) *.o
 
 fclean:
-		$(RM) *~ $(NAME) $(RM) *.o
+		$(RM) *~ $(NAME)
+		$(RM) *.o
 
 re:
 		$(RM) *~ $(NAME) $(RM) *.o
