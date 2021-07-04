@@ -8,8 +8,8 @@ CFLAGS = -Wall -Werror -Wextra -pedantic
 
 all: $(NAME)
 
-$(NAME): $(OBJ) m.h
-		$(CC) $(OBJ) m.h -o $(NAME)
+$(NAME): $(OBJ)
+		$(CC) $(OBJ) -o $(NAME)
 
 clean:
 		$(RM) *~ $(NAME)
