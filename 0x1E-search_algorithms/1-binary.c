@@ -36,7 +36,7 @@ int binary_search(int *array, size_t size, int value)
 {
 	size_t floor, top, middle;
 
-	if (array)
+	if (array && size > 0)
 	{
 		floor = 0;
 		top = size - 1;
