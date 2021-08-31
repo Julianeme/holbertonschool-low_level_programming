@@ -17,7 +17,7 @@ int binary_search(int *array, size_t size, int value)
 
 	floor = array[0];
 	top = array[size - 1];
-	if (array)
+	if (array && size > 0)
 	{
 		while (floor < top)
 		{
