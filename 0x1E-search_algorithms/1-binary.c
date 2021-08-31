@@ -1,6 +1,28 @@
 #include "search_algos.h"
 
 /**
+ * print_array - prints an array from pos floor to top
+ * @array: is a pointer to the first element of the array to search in
+ * @floor: starting printing position
+ * @top: ending printing position
+ */
+
+void print_array(int *array, size_t floor, size_t top)
+{
+	size_t i = floor;
+
+	printf("Searching in array: ");
+	while (i <= top)
+	{
+		printf("%d", array[i]);
+		if (i != top)
+			printf(", ");
+		i++;
+	}
+	printf("\n");
+}
+
+/**
  * binary_search - searches for a value in an array of
  * integers using the Binary search algorithm
  * @array: is a pointer to the first element of the array to search in
@@ -12,42 +34,37 @@
 
 int binary_search(int *array, size_t size, int value)
 {
-	size_t floor, top, i;
-	int middle;
+	size_t floor, top, middle;
 
-	floor = 0;
-	top = size - 1;
-
-	while (array && floor < top)
+	if (array)
 	{
-		i = floor;
-		printf("Searching in array: ");
-		while (i <= top)
+		floor = 0;
+		top = size - 1;
+		print_array(array, floor, top);
+		while (floor < top)
 		{
-			printf("%d", array[i]);
-			if (i != size - 1)
-				printf(", ");
-			i++;
+			middle = (floor + top) / 2;
+			/**
+			 *  Check if value is present at mid
+			*/
+			if (array[middle] == value)
+			{
+				top = middle;
+				print_array(array, floor, top);
+				return (middle);
+			}
+			/**
+			 * If value greater, ignore left half
+			*/
+			if (array[middle] < value)
+				floor = middle + 1;
+			/**
+			 *  If value is smaller, ignore right half
+			*/
+			else
+				top = middle;
+			print_array(array, floor, top);
 		}
-		printf("\n");
-		middle = floor + top  / 2;
-
-		/**
-		 *  Check if value is present at mid
-		*/
-		if (array[middle] == value)
-			return (middle);
-		/**
-		 * If value greater, ignore left half
-		*/
-		if (array[middle] < value)
-			floor = middle + 1;
-		/**
-		 *  If value is smaller, ignore right half
-		*/
-		else
-			top = middle - 1;
 	}
-
 	return (-1);
 }
