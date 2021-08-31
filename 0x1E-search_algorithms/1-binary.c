@@ -49,8 +49,6 @@ int binary_search(int *array, size_t size, int value)
 			*/
 			if (array[middle] == value)
 			{
-				top = middle;
-				print_array(array, floor, top);
 				return (middle);
 			}
 			/**
