@@ -9,8 +9,6 @@
  * Return: first index where value is found or -1 if not found or array is Null
  */
 
-#include <stdio.h>
-
 int linear_search(int *array, size_t size, int value)
 {
 	size_t index;
