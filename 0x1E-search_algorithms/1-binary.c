@@ -37,33 +37,32 @@ int binary_search(int *array, size_t size, int value)
 	size_t bottom, top, middle;
 
 	bottom = 0;
+	top = size - 1;
+
+	if (array == NULL)
+		return (-1);
 	if (size == 1)
 		return (array[bottom]);
-	if (array != NULL)
+	while (top > bottom)
 	{
-		top = size - 1;
 		print_array(array, bottom, top);
-		while (top >= bottom)
+		middle = (bottom + top) / 2;
+		/**
+		 * If value greater, ignore left half
+		*/
+		if (array[middle] == value)
+			return (middle);
+		/**
+		 *  If value is smaller, ignore right half
+		*/
+		else if (array[middle] > value)
+			top = middle;
+		/**
+		 *  Check if value is present at mid
+		*/
+		else
 		{
-			middle = (bottom + top) / 2;
-			/**
-			 * If value greater, ignore left half
-			*/
-			if (array[middle] < value)
-				bottom = middle + 1;
-			/**
-			 *  If value is smaller, ignore right half
-			*/
-			else if (array[middle] > value)
-				top = middle - 1;
-			/**
-			 *  Check if value is present at mid
-			*/
-			else
-			{
-				return (middle);
-			}
-			print_array(array, bottom, top);
+			bottom = middle + 1;
 		}
 	}
 	return (-1);
