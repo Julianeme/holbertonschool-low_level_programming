@@ -17,39 +17,38 @@ int binary_search(int *array, size_t size, int value)
 
 	floor = array[0];
 	top = array[size - 1];
-	while (array && floor <= top)
+	if (array)
 	{
-		i = floor;
-		printf("Searching in array: ");
-		while (i <= top)
+		while (floor <= top)
 		{
-			printf("%d", array[i]);
-			if (i != size - 1)
-				printf(", ");
-			i++;
+			i = floor;
+			printf("Searching in array: ");
+			while (i <= top)
+			{
+				printf("%d", array[i]);
+				if (i != size - 1)
+					printf(", ");
+				i++;
+			}
+			printf("\n");
+			middle = floor + (top - floor) / 2;
+
+			/**
+			 *  Check if value is present at mid
+			*/
+			if (array[middle] == value)
+				return (middle);
+			/**
+			 * If value greater, ignore left half
+			*/
+			if (array[middle] < value)
+				floor = middle + 1;
+			/**
+			 *  If value is smaller, ignore right half
+			*/
+			else
+				top = middle - 1;
 		}
-		printf("\n");
-		middle = floor + (top - floor) / 2;
-
-		/**
-		 *  Check if value is present at mid
-		*/
-		if (array[middle] == value)
-			return (middle);
-		/**
-		 * If value greater, ignore left half
-		*/
-		if (array[middle] < value)
-			floor = middle + 1;
-		/**
-		 *  If value is smaller, ignore right half
-		*/
-		else
-			top = middle - 1;
 	}
-
-	/**
-	 *  if we reach here, then element was not present
-	*/
 	return (-1);
 }
