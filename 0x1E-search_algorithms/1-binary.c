@@ -1,15 +1,15 @@
 #include "search_algos.h"
 
 /**
- * print_array - prints an array from pos floor to top
+ * print_array - prints an array from pos bottom to top
  * @array: is a pointer to the first element of the array to search in
- * @floor: starting printing position
+ * @bottom: starting printing position
  * @top: ending printing position
  */
 
-void print_array(int *array, size_t floor, size_t top)
+void print_array(int *array, size_t bottom, size_t top)
 {
-	size_t i = floor;
+	size_t i = bottom;
 
 	printf("Searching in array: ");
 	while (i <= top)
@@ -34,21 +34,23 @@ void print_array(int *array, size_t floor, size_t top)
 
 int binary_search(int *array, size_t size, int value)
 {
-	size_t floor, top, middle;
+	size_t bottom, top, middle;
 
-	if (array != NULL && size > 0)
+	bottom = 0;
+	if (size == 1)
+		return (array[bottom]);
+	if (array != NULL)
 	{
-		floor = 0;
 		top = size - 1;
-		print_array(array, floor, top);
-		while (floor < top)
+		print_array(array, bottom, top);
+		while (bottom < top)
 		{
-			middle = (floor + top) / 2;
+			middle = (bottom + top) / 2;
 			/**
 			 * If value greater, ignore left half
 			*/
 			if (array[middle] < value)
-				floor = middle + 1;
+				bottom = middle + 1;
 			/**
 			 *  If value is smaller, ignore right half
 			*/
@@ -61,7 +63,7 @@ int binary_search(int *array, size_t size, int value)
 			{
 				return (middle);
 			}
-			print_array(array, floor, top);
+			print_array(array, bottom, top);
 		}
 	}
 	return (-1);
