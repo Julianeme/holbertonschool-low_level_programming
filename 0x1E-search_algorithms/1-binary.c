@@ -52,12 +52,12 @@ int binary_search(int *array, size_t size, int value)
 			/**
 			 *  If value is smaller, ignore right half
 			*/
-			else
-				top = middle - 1;
+			else if (array[middle] > value)
+				top = middle -1;
 			/**
 			 *  Check if value is present at mid
 			*/
-			if (array[middle] == value)
+			else
 			{
 				return (middle);
 			}
