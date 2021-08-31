@@ -62,7 +62,7 @@ int binary_search(int *array, size_t size, int value)
 			 *  If value is smaller, ignore right half
 			*/
 			else
-				top = middle;
+				top = middle - 1;
 			print_array(array, floor, top);
 		}
 	}
