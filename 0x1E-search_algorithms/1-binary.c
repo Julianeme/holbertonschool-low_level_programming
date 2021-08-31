@@ -15,8 +15,8 @@ int binary_search(int *array, size_t size, int value)
 	size_t floor, top, i;
 	int middle;
 
-	floor = array[0];
-	top = array[size - 1];
+	floor = 0;
+	top = size - 1;
 
 	while (array && floor < top)
 	{
@@ -30,7 +30,7 @@ int binary_search(int *array, size_t size, int value)
 			i++;
 		}
 		printf("\n");
-		middle = floor + (top - floor) / 2;
+		middle = floor + top  / 2;
 
 		/**
 		 *  Check if value is present at mid
