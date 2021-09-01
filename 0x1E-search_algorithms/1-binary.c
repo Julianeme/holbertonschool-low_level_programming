@@ -58,10 +58,7 @@ int binary_search(int *array, size_t size, int value)
 			 *  Check if value is present at mid
 			*/
 			else
-			{
 				return (middle);
-			}
-			
 		}
 	}
 	return (-1);
