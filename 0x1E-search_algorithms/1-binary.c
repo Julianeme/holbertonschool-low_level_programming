@@ -34,23 +34,34 @@ void print_array(int *array, size_t floor, size_t top)
 
 int binary_search(int *array, size_t size, int value)
 {
-	size_t left, middle, top;
+	size_t floor, top, middle;
 
 	if (array != NULL && size > 0)
 	{
-		left = 0;
+		floor = 0;
 		top = size - 1;
-		print_array(array, left, top);
-		while (left < top)
+		while (floor <= top)
 		{
-			middle = (left + top) / 2;
+			print_array(array, floor, top);
+			middle = (floor + top) / 2;
+			/**
+			 * If value greater, ignore left half
+			*/
 			if (array[middle] < value)
-				left = middle + 1;
+				floor = middle + 1;
+			/**
+			 *  If value is smaller, ignore right half
+			*/
 			else if (array[middle] > value)
-				top = middle;
+				top = middle - 1;
+			/**
+			 *  Check if value is present at mid
+			*/
 			else
+			{
 				return (middle);
-			print_array(array, left, top);
+			}
+			
 		}
 	}
 	return (-1);
